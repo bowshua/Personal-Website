@@ -1,7 +1,21 @@
 :root {
+  /* Light mode */
   --bg-color: #f9fafb;
   --text-color: #111827;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
   --accent-color: #2563eb;
+}
+
+/* ============================= */
+/* Hacker Terminal Dark Mode     */
+/* ============================= */
+body.dark {
+  --bg-color: #020403;          /* near-black */
+  --text-color: #39ff14;        /* neon green */
+  --card-bg: #050a05;           /* dark green-black */
+  --border-color: #0f3d0f;      /* muted green */
+  --accent-color: #39ff14;      /* neon green */
 }
 
 * {
@@ -10,40 +24,68 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   background: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
+  transition: background-color 0.4s, color 0.4s;
 }
 
+/* ============================= */
+/* Header                        */
+/* ============================= */
 header {
   text-align: center;
   padding: 3rem 1rem;
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
 }
 
+/* ============================= */
+/* Navigation                    */
+/* ============================= */
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   padding: 1rem;
-  background: white;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #e5e7eb;
+  z-index: 100;
+}
+
+.nav-links {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 nav a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
+  transition: color 0.2s;
 }
 
 nav a:hover {
   color: var(--accent-color);
 }
 
+/* Toggle stays right */
+.toggle {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* Main Content                  */
+/* ============================= */
 main {
   max-width: 800px;
   margin: 0 auto;
@@ -54,29 +96,102 @@ section {
   margin-bottom: 3rem;
 }
 
+h1, h2, h3 {
+  color: var(--accent-color);
+}
+
 h2 {
   border-bottom: 2px solid var(--accent-color);
   display: inline-block;
   padding-bottom: 0.25rem;
 }
 
+/* Project Card */
 .project {
-  background: white;
+  background: var(--card-bg);
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   margin-top: 1rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
 }
 
-.project a {
+/* Links */
+a {
   color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 500;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* EE Schematic Symbols          */
+/* ============================= */
+
+.schematic {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.symbol {
+  width: 80px;
+  height: 80px;
+}
+
+.symbol line,
+.symbol polygon {
+  stroke: var(--accent-color);
+  stroke-width: 4;
+  fill: var(--accent-color);
+  filter: drop-shadow(0 0 6px var(--accent-color));
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
 footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
-  color: #6b7280;
+  opacity: 0.8;
+}
+
+/* ============================= */
+/* Dark Mode Toggle (Slider)     */
+/* ============================= */
+.toggle input {
+  display: none;
+}
+
+.slider {
+  width: 44px;
+  height: 24px;
+  background: #145214;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.slider::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #39ff14;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle input:checked + .slider {
+  background: #39ff14;
+}
+
+.toggle input:checked + .slider::before {
+  background: #020403;
+  transform: translateX(20px);
 }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua dos Santos-Becker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Dark mode ON by default -->
+<body class="dark">
+  <header>
+    <h1>Joshua dos Santos-Becker</h1>
+    <div class="schematic">
+  <!-- MOSFET -->
+  <svg viewBox="15 -5 130 130" class="symbol">
+    <!-- Drain -->
+    <line x1="60" y1="10" x2="60" y2="90" />
+    <line x1="40" y1="20" x2="40" y2="80" />
+    
+    <line x1="123" y1="90" x2="123" y2="105" />
+    <line x1="120" y1="-5" x2="120" y2="10" />
+    <!-- Source -->
+     <line x1="60" y1="90" x2="110" y2="90" />
+
+    <line x1="60" y1="10" x2="120" y2="10" />
+    <!-- Gate -->
+    <line x1="0" y1="50" x2="40" y2="50" />
+    <!-- Emitter -->
+    <polygon points="105,85 120,91 105,97" />
+  </svg>
+</div>
+    <p>Electrical Design Engineer & Graduate Student</p>
+  </header>
+
+  <nav>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <label class="toggle">
+      <input type="checkbox" id="darkToggle" checked>
+      <span class="slider"></span>
+    </label>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Howdy Yall! I am currently a Graduate Student pursuing a Master's Degree in Electrical Engineering at Purdue University. 
+        I spend most of my free time watching Aggie football, exercising, playing League of Legends, Escape from Tarkov, and ocassionally Rust.
+        I also enjoy trying new things and exploring.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Automatic Pet Feeder</h3>
+        <p>
+          System designed to allow customer to feed their pet based on a schedule set through their mobile device.
+          This was my senior design capstone project.
+        </p>
+        <a href="https://github.com/bowshua/PCBLibrary" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project">
+        <h3>AutoCkt</h3>
+        <p>
+          Machine Learning Agent written in Python used to solve simple amplifier analog circuit parameters
+          with basic feedback networks.
+        </p>
+        <a href="https://github.com/bowshua/AutoCkt-for-Analog-Circuit" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project">
+        <h3>io.io</h3>
+        <p>
+          2D resource collection game written in JS and HTML using the Phaser framework.
+          (Currently unfinished.)
+        </p>
+        <a href="https://github.com/bowshua/io.io" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email:
+        <a href="mailto:jdosbecker@gmail.com">jdosbecker@gmail.com</a>
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/bowshua" target="_blank">
+          github.com/bowshua
+        </a>
+      </p>
+      <p>
+        LinkedIn:
+        <a href="https://linkedin.com/in/joshua-dossantosbecker/" target="_blank">
+          linkedin.com/in/joshua-dossantosbecker/
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Joshua dos Santos-Becker</p>
+  </footer>
+
+  <script>
+    // Update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Dark mode toggle logic
+    const toggle = document.getElementById("darkToggle");
+
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark", toggle.checked);
+    });
+  </script>
+</body>
+</html>
