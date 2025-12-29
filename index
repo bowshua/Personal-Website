@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Short tagline or role (e.g. Developer • Researcher • Designer)</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Write a brief introduction about yourself, your interests, and what
+        you're working on.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Project Title</h3>
+        <p>Short description of what this project does.</p>
+        <a href="https://github.com/your-username/project-repo" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <!-- Add more projects as needed -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:you@example.com">you@example.com</a>
+      </p>
+      <p>
+        GitHub: <a href="https://github.com/your-username" target="_blank">
+          github.com/your-username
+        </a>
+      </p>
+      <p>
+        LinkedIn: <a href="https://linkedin.com/in/your-name" target="_blank">
+          linkedin.com/in/your-name
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Your Name</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
