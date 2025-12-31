@@ -74,25 +74,25 @@
             Another member designed the mobile application, and another member wrote the code for the ESP32 microcontroller and firebase database to handle communication.
             Due to the system requirement of having a battery charger and level checker I decided to create two separate PCBs. One to handle the battery charging and one to handle all of the main control and communication.
             Below you can see the render of the first pass at creating the controller pcb. This intial board had everything working except the 5V stage due to me accidentally ripping a pad off the board due to initial size constraints.</p>
-            <img src="C:\Users\joshw\OneDrive\Desktop\Personal Website\initialpcbrender.png" alt="Initial PCB Render">
+            <img src="initialpcbrender.png" alt="Initial PCB Render">
 
             <p>After much deliberation and discussion with teammates we decided to maximize the PCB size constraint at ~6inx7in size board that way we could design the rest of the project in time for showcase.
               I decided to space out components as far as possible and also separate different stages of the circuit in order to make assembly easier for me. I could look at labeled pads and instantly know which component belonged without
               much headache. It isnt the most cost efficient or professional solution but it greatly helped the debug process during soldering.
             </p>
-            <img src="C:\Users\joshw\OneDrive\Desktop\Personal Website\finalpcbschematic.png" alt="Final PCB Schematic">
+            <img src="finalpcbschematic.png" alt="Final PCB Schematic">
             
             <p>
               Below you can see the final render of the pcb.
             </p>
-            <img src="C:\Users\joshw\OneDrive\Desktop\Personal Website\finalpcbrender.png" alt="Final PCB Render">
+            <img src="finalpcbrender.png" alt="Final PCB Render">
 
             <p>
               Below you can see some of my initial testing/debugging for the peripherals of the system. This motor, scale(weight sensor), and ultrasonic distance sensor.
               If you're wondering why there are two resistors floating above the board that would be because I accidentally wired the traces of my potentiometer incorrectly to configure the I_max of the motor.
               I opted to just "hard code" the I_max current by using some clever combination of parallel resistances.
             </p>
-            <img src="C:\Users\joshw\OneDrive\Desktop\Personal Website\peripheralsplugged.png" alt="Initial PCB Testing">
+            <img src="peripheralsplugged.png" alt="Initial PCB Testing">
             
             <p>
               I could go on for great lengths about the problems I solved during this capstone project. However, in the interest of your time and mine I will only include technical solutions from this point on.
@@ -101,7 +101,7 @@
               I did some research into Sigma-Delta ADC architecture but realized this was something "wrong" with the chip. I created a patchy solution by sinking some of the voltage via resistor. I was able to get data to properly read out of the ESP32 occansionally
               but it was nearly as consistent as we needed. Our solution to the requirement of weight based portions was based upon the average rate of food dispensed by the motor aka food per second.
             </p>
-            <img src="C:\Users\joshw\OneDrive\Desktop\Personal Website\scopeshot1.jpg" alt="Initial PCB Testing">
+            <img src="scopeshot1.jpg" alt="Initial PCB Testing">
 
             <div class="video-container">
             <iframe
