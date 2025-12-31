@@ -268,13 +268,16 @@ footer {
 /* ============================= */
 
 .resume {
-    padding: 0.8em;
+    padding: 0.5rem 1rem;
     font-weight: bold;
     text-shadow: 2px;
     cursor: pointer;
     border: none;
     border-radius: 30px;
-    background:var(--card-bg);
+    background: var(--card-bg);
     color: var(--accent-color);
-    border: 2px solid var(--border-color);
+    border: 3px solid var(--border-color);
+    font-family: inherit;
+    text-decoration: none;
+    -webkit-font-smoothing: none;
 }
