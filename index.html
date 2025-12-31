@@ -37,7 +37,7 @@
       download="Joshua_dos_Santos-Becker_Resume.pdf"
       class="resume"
       >
-        📄 Resume
+      📄 Resume
     </a>
 
   </header>
@@ -144,11 +144,27 @@
       </div>
 
       <div class="project">
+        <div class="project-header" onclick="toggleProject(this)">
         <h3>io.io</h3>
+        <span class="caret">▶</span>
+        </div>
         <p>
-          2D resource collection game written in JS and HTML using the Phaser framework.
-          (Currently unfinished.)
+          2D top down roguelike browser videogame written in JS and HTML using the Phaser framework.
+          (Currently unfinished)
         </p>
+        <div class="project-details">
+          
+          <p>
+          I had an idea to merge movement, terrain generation and gameplay of zombs.io with a ninja kiwi game called SAS Zombie Assault 4.
+          I got as far as recreating the movement and terrain generation and even created some basic resources for the players to harvest before getting stuck on some datastructures principles
+          which caused me to put the game on hiatus. Below you can see a debug version of the game which I locally host via an Apache webserver to aid in the process of writing code.
+          The game currently uses the Phaser 2 framework because the Phaser 3 framework has had some changes to the physics function which cause buggy behavior with rigid hitboxes or "colliders".
+          I am open to restarting this project if any more computer savvy people feel the urge to aid with the datastructure creation and organization of player data.
+          </p>
+          <img src="gameplay.png" alt="Debug Gameplay">
+
+
+        </div>
         <a href="https://github.com/bowshua/io.io" target="_blank">
           View on GitHub →
         </a>
