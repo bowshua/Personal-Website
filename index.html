@@ -54,14 +54,6 @@
       background-color: #da190b;
     }
     
-    .game-btn.fullscreen {
-      background-color: #2196F3;
-    }
-    
-    .game-btn.fullscreen:hover {
-      background-color: #1976D2;
-    }
-    
     /* Dark mode game button adjustments */
     .dark .game-btn {
       border: 1px solid rgba(255,255,255,0.2);
@@ -229,7 +221,6 @@
           <div class="game-controls">
             <button class="game-btn" id="playBtn" onclick="startGame()">▶ Play Game</button>
             <button class="game-btn stop" id="stopBtn" onclick="stopGame()" style="display:none;">■ Stop Game</button>
-            <button class="game-btn fullscreen" id="fullscreenBtn" onclick="goFullscreen()" style="display:none;">⛶ Fullscreen</button>
           </div>
           
           <div id="game-container"></div>
@@ -298,7 +289,6 @@
       document.getElementById('game-container').style.display = 'block';
       document.getElementById('playBtn').style.display = 'none';
       document.getElementById('stopBtn').style.display = 'inline-block';
-      document.getElementById('fullscreenBtn').style.display = 'inline-block';
       
       // Initialize the game
       initGame();
@@ -313,19 +303,8 @@
       document.getElementById('game-container').innerHTML = '';
       document.getElementById('playBtn').style.display = 'inline-block';
       document.getElementById('stopBtn').style.display = 'none';
-      document.getElementById('fullscreenBtn').style.display = 'none';
     }
-
-    function goFullscreen() {
-      var container = document.getElementById('game-container');
-      if (container.requestFullscreen) {
-        container.requestFullscreen();
-      } else if (container.webkitRequestFullscreen) {
-        container.webkitRequestFullscreen();
-      } else if (container.msRequestFullscreen) {
-        container.msRequestFullscreen();
-      }
-    }
+    
 
     // ========================================
     // PASTE YOUR GAME INITIALIZATION HERE
@@ -1815,6 +1794,13 @@ function create() {
     createResourcePanel(this);
     createFullscreenButton(this);
 
+    // Diagnostic text
+    //this.angleText = this.add.text(player.x, player.y, '');
+    //this.posx = this.add.text(player.x, player.y, '');
+    //this.posy = this.add.text(player.x, player.y, '');
+    //this.curx = this.add.text(player.x, player.y, '');
+    //this.cury = this.add.text(player.x, player.y, '');
+
     this.input.on('pointermove', function (pointer) {
         const cursor = getCursorWorldPosition();
         var angle = Phaser.Math.RAD_TO_DEG * Phaser.Math.Angle.Between(player.x, player.y, cursor.x, cursor.y);
@@ -1896,14 +1882,14 @@ function onZombieHitGoldmine(goldmine, zombie) {
 function update(time, delta) {
     updateResourcePanel();
     updateUpgradePanel();
-    this.angleText.setPosition(player.x - 10, player.y - 10);
-    this.posx.setPosition(player.x - 10, player.y - 60);
-    this.posy.setPosition(player.x - 10, player.y - 30);
-    this.curx.setPosition(player.x - 10, player.y - 90);
-    this.cury.setPosition(player.x - 10, player.y - 120);
+    //this.angleText.setPosition(player.x - 10, player.y - 10);
+    //this.posx.setPosition(player.x - 10, player.y - 60);
+    //this.posy.setPosition(player.x - 10, player.y - 30);
+    //this.curx.setPosition(player.x - 10, player.y - 90);
+    //this.cury.setPosition(player.x - 10, player.y - 120);
 
-    this.posx.text = 'positionx ' + player.x.toFixed(1);
-    this.posy.text = 'positiony ' + player.y.toFixed(1);
+    //this.posx.text = 'positionx ' + player.x.toFixed(1);
+    //this.posy.text = 'positiony ' + player.y.toFixed(1);
 
     handlePlayerMovement();
     handleHotbarInput();
